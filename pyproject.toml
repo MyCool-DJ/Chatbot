@@ -5,6 +5,8 @@ description = ""
 authors = ["Your Name <you@example.com>"]
 
 [tool.poetry.dependencies]
+SpeechRecognition = "3.8.1"
+pywhatkit = "5.3.0"
 python = "^3.8"
 pyjokes = "^0.6.0"
 pyttsx3 = "^2.90"

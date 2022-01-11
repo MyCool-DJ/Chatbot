@@ -1,4 +1,5 @@
-import speech_recognition as sr
+import speech_recognition as sr #what do I install here? I am getting an error ModuleNotFound
+# Do not touch...wait plz
 import pyttsx3
 import pywhatkit
 import datetime

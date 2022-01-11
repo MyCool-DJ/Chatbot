@@ -49,6 +49,56 @@ optional = false
 python-versions = ">=3.5"
 
 [[package]]
+name = "mouseinfo"
+version = "0.1.3"
+description = "An application to display XY position and RGB color information for the pixel currently under the mouse. Works on Python 2 and 3."
+category = "main"
+optional = false
+python-versions = "*"
+
+[package.dependencies]
+pyperclip = "*"
+python3-Xlib = {version = "*", markers = "platform_system == \"Linux\" and python_version >= \"3.0\""}
+rubicon-objc = {version = "*", markers = "platform_system == \"Darwin\""}
+
+[[package]]
+name = "pillow"
+version = "9.0.0"
+description = "Python Imaging Library (Fork)"
+category = "main"
+optional = false
+python-versions = ">=3.7"
+
+[[package]]
+name = "pyautogui"
+version = "0.9.53"
+description = "PyAutoGUI lets Python control the mouse and keyboard, and other GUI automation tasks. For Windows, macOS, and Linux, on Python 3 and 2."
+category = "main"
+optional = false
+python-versions = "*"
+
+[package.dependencies]
+mouseinfo = "*"
+pygetwindow = ">=0.0.5"
+pymsgbox = "*"
+pyobjc = {version = "*", markers = "platform_system == \"Darwin\""}
+pyobjc-core = {version = "*", markers = "platform_system == \"Darwin\""}
+pyscreeze = ">=0.1.21"
+python3-Xlib = {version = "*", markers = "platform_system == \"Linux\" and python_version >= \"3.0\""}
+PyTweening = ">=1.0.1"
+
+[[package]]
+name = "pygetwindow"
+version = "0.0.9"
+description = "A simple, cross-platform module for obtaining GUI information on application's windows."
+category = "main"
+optional = false
+python-versions = "*"
+
+[package.dependencies]
+pyrect = "*"
+
+[[package]]
 name = "pyjokes"
 version = "0.6.0"
 description = "One line jokes for programmers (jokes as a service)"
@@ -59,6 +109,14 @@ python-versions = "*"
 [package.extras]
 doc = ["mkdocs"]
 test = ["pytest", "coverage", "tox"]
+
+[[package]]
+name = "pymsgbox"
+version = "1.0.9"
+description = "A simple, cross-platform, pure Python module for JavaScript-like message boxes."
+category = "main"
+optional = false
+python-versions = "*"
 
 [[package]]
 name = "pyobjc"
@@ -1912,6 +1970,14 @@ pyobjc-core = ">=8.1"
 pyobjc-framework-Cocoa = ">=8.1"
 
 [[package]]
+name = "pyperclip"
+version = "1.8.2"
+description = "A cross-platform clipboard module for Python. (Only handles plain text for now.)"
+category = "main"
+optional = false
+python-versions = "*"
+
+[[package]]
 name = "pypiwin32"
 version = "223"
 description = ""
@@ -1921,6 +1987,33 @@ python-versions = "*"
 
 [package.dependencies]
 pywin32 = ">=223"
+
+[[package]]
+name = "pyrect"
+version = "0.1.4"
+description = "PyRect is a simple module with a Rect class for Pygame-like rectangular areas."
+category = "main"
+optional = false
+python-versions = "*"
+
+[[package]]
+name = "pyscreeze"
+version = "0.1.28"
+description = "A simple, cross-platform screenshot module for Python 2 and 3."
+category = "main"
+optional = false
+python-versions = "*"
+
+[package.dependencies]
+Pillow = {version = ">=6.2.1", markers = "python_version == \"3.8\""}
+
+[[package]]
+name = "python3-xlib"
+version = "0.15"
+description = "Python3 X Library"
+category = "main"
+optional = false
+python-versions = "*"
 
 [[package]]
 name = "pyttsx3"
@@ -1935,6 +2028,28 @@ comtypes = {version = "*", markers = "platform_system == \"Windows\""}
 pyobjc = {version = ">=2.4", markers = "platform_system == \"Darwin\""}
 pypiwin32 = {version = "*", markers = "platform_system == \"Windows\""}
 pywin32 = {version = "*", markers = "platform_system == \"Windows\""}
+
+[[package]]
+name = "pytweening"
+version = "1.0.4"
+description = "A collection of tweening / easing functions."
+category = "main"
+optional = false
+python-versions = "*"
+
+[[package]]
+name = "pywhatkit"
+version = "5.3"
+description = "PyWhatKit is a Simple and Powerful WhatsApp Automation Library with many useful Features"
+category = "main"
+optional = false
+python-versions = "*"
+
+[package.dependencies]
+Pillow = "*"
+pyautogui = "*"
+requests = "*"
+wikipedia = "*"
 
 [[package]]
 name = "pywin32"
@@ -1963,12 +2078,28 @@ socks = ["PySocks (>=1.5.6,!=1.5.7)", "win-inet-pton"]
 use_chardet_on_py3 = ["chardet (>=3.0.2,<5)"]
 
 [[package]]
+name = "rubicon-objc"
+version = "0.4.2"
+description = "A bridge between an Objective C runtime environment and Python."
+category = "main"
+optional = false
+python-versions = ">=3.5"
+
+[[package]]
 name = "soupsieve"
 version = "2.3.1"
 description = "A modern CSS selector implementation for Beautiful Soup."
 category = "main"
 optional = false
 python-versions = ">=3.6"
+
+[[package]]
+name = "speechrecognition"
+version = "3.8.1"
+description = "Library for performing speech recognition, with support for several engines and APIs, online and offline."
+category = "main"
+optional = false
+python-versions = "*"
 
 [[package]]
 name = "urllib3"
@@ -1998,7 +2129,7 @@ requests = ">=2.0.0,<3.0.0"
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.8"
-content-hash = "79fdf272ec4c7703c704930a7740b10acd3d68842b4e06838aaa35128ba6d855"
+content-hash = "fea273ea3054ad89a717ae14e91372560f46aa6016964301cb8aff7dc5dad819"
 
 [metadata.files]
 beautifulsoup4 = [
@@ -2020,9 +2151,55 @@ idna = [
     {file = "idna-3.3-py3-none-any.whl", hash = "sha256:84d9dd047ffa80596e0f246e2eab0b391788b0503584e8945f2368256d2735ff"},
     {file = "idna-3.3.tar.gz", hash = "sha256:9d643ff0a55b762d5cdb124b8eaa99c66322e2157b69160bc32796e824360e6d"},
 ]
+mouseinfo = [
+    {file = "MouseInfo-0.1.3.tar.gz", hash = "sha256:2c62fb8885062b8e520a3cce0a297c657adcc08c60952eb05bc8256ef6f7f6e7"},
+]
+pillow = [
+    {file = "Pillow-9.0.0-cp310-cp310-macosx_10_10_universal2.whl", hash = "sha256:113723312215b25c22df1fdf0e2da7a3b9c357a7d24a93ebbe80bfda4f37a8d4"},
+    {file = "Pillow-9.0.0-cp310-cp310-macosx_11_0_arm64.whl", hash = "sha256:bb47a548cea95b86494a26c89d153fd31122ed65255db5dcbc421a2d28eb3379"},
+    {file = "Pillow-9.0.0-cp310-cp310-manylinux_2_17_aarch64.manylinux2014_aarch64.whl", hash = "sha256:31b265496e603985fad54d52d11970383e317d11e18e856971bdbb86af7242a4"},
+    {file = "Pillow-9.0.0-cp310-cp310-manylinux_2_17_i686.manylinux2014_i686.whl", hash = "sha256:d154ed971a4cc04b93a6d5b47f37948d1f621f25de3e8fa0c26b2d44f24e3e8f"},
+    {file = "Pillow-9.0.0-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:80fe92813d208ce8aa7d76da878bdc84b90809f79ccbad2a288e9bcbeac1d9bd"},
+    {file = "Pillow-9.0.0-cp310-cp310-win32.whl", hash = "sha256:d5dcea1387331c905405b09cdbfb34611050cc52c865d71f2362f354faee1e9f"},
+    {file = "Pillow-9.0.0-cp310-cp310-win_amd64.whl", hash = "sha256:52abae4c96b5da630a8b4247de5428f593465291e5b239f3f843a911a3cf0105"},
+    {file = "Pillow-9.0.0-cp37-cp37m-macosx_10_10_x86_64.whl", hash = "sha256:72c3110228944019e5f27232296c5923398496b28be42535e3b2dc7297b6e8b6"},
+    {file = "Pillow-9.0.0-cp37-cp37m-manylinux_2_17_aarch64.manylinux2014_aarch64.whl", hash = "sha256:97b6d21771da41497b81652d44191489296555b761684f82b7b544c49989110f"},
+    {file = "Pillow-9.0.0-cp37-cp37m-manylinux_2_17_i686.manylinux2014_i686.whl", hash = "sha256:72f649d93d4cc4d8cf79c91ebc25137c358718ad75f99e99e043325ea7d56100"},
+    {file = "Pillow-9.0.0-cp37-cp37m-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:7aaf07085c756f6cb1c692ee0d5a86c531703b6e8c9cae581b31b562c16b98ce"},
+    {file = "Pillow-9.0.0-cp37-cp37m-win32.whl", hash = "sha256:03b27b197deb4ee400ed57d8d4e572d2d8d80f825b6634daf6e2c18c3c6ccfa6"},
+    {file = "Pillow-9.0.0-cp37-cp37m-win_amd64.whl", hash = "sha256:a09a9d4ec2b7887f7a088bbaacfd5c07160e746e3d47ec5e8050ae3b2a229e9f"},
+    {file = "Pillow-9.0.0-cp38-cp38-macosx_10_10_x86_64.whl", hash = "sha256:490e52e99224858f154975db61c060686df8a6b3f0212a678e5d2e2ce24675c9"},
+    {file = "Pillow-9.0.0-cp38-cp38-macosx_11_0_arm64.whl", hash = "sha256:500d397ddf4bbf2ca42e198399ac13e7841956c72645513e8ddf243b31ad2128"},
+    {file = "Pillow-9.0.0-cp38-cp38-manylinux_2_17_aarch64.manylinux2014_aarch64.whl", hash = "sha256:0ebd8b9137630a7bbbff8c4b31e774ff05bbb90f7911d93ea2c9371e41039b52"},
+    {file = "Pillow-9.0.0-cp38-cp38-manylinux_2_17_i686.manylinux2014_i686.whl", hash = "sha256:fd0e5062f11cb3e730450a7d9f323f4051b532781026395c4323b8ad055523c4"},
+    {file = "Pillow-9.0.0-cp38-cp38-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:9f3b4522148586d35e78313db4db0df4b759ddd7649ef70002b6c3767d0fdeb7"},
+    {file = "Pillow-9.0.0-cp38-cp38-win32.whl", hash = "sha256:0b281fcadbb688607ea6ece7649c5d59d4bbd574e90db6cd030e9e85bde9fecc"},
+    {file = "Pillow-9.0.0-cp38-cp38-win_amd64.whl", hash = "sha256:b5050d681bcf5c9f2570b93bee5d3ec8ae4cf23158812f91ed57f7126df91762"},
+    {file = "Pillow-9.0.0-cp39-cp39-macosx_10_10_x86_64.whl", hash = "sha256:c2067b3bb0781f14059b112c9da5a91c80a600a97915b4f48b37f197895dd925"},
+    {file = "Pillow-9.0.0-cp39-cp39-macosx_11_0_arm64.whl", hash = "sha256:2d16b6196fb7a54aff6b5e3ecd00f7c0bab1b56eee39214b2b223a9d938c50af"},
+    {file = "Pillow-9.0.0-cp39-cp39-manylinux_2_17_aarch64.manylinux2014_aarch64.whl", hash = "sha256:98cb63ca63cb61f594511c06218ab4394bf80388b3d66cd61d0b1f63ee0ea69f"},
+    {file = "Pillow-9.0.0-cp39-cp39-manylinux_2_17_i686.manylinux2014_i686.whl", hash = "sha256:bc462d24500ba707e9cbdef436c16e5c8cbf29908278af053008d9f689f56dee"},
+    {file = "Pillow-9.0.0-cp39-cp39-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:3586e12d874ce2f1bc875a3ffba98732ebb12e18fb6d97be482bd62b56803281"},
+    {file = "Pillow-9.0.0-cp39-cp39-win32.whl", hash = "sha256:68e06f8b2248f6dc8b899c3e7ecf02c9f413aab622f4d6190df53a78b93d97a5"},
+    {file = "Pillow-9.0.0-cp39-cp39-win_amd64.whl", hash = "sha256:6579f9ba84a3d4f1807c4aab4be06f373017fc65fff43498885ac50a9b47a553"},
+    {file = "Pillow-9.0.0-pp37-pypy37_pp73-macosx_10_10_x86_64.whl", hash = "sha256:47f5cf60bcb9fbc46011f75c9b45a8b5ad077ca352a78185bd3e7f1d294b98bb"},
+    {file = "Pillow-9.0.0-pp37-pypy37_pp73-manylinux_2_17_i686.manylinux2014_i686.whl", hash = "sha256:2fd8053e1f8ff1844419842fd474fc359676b2e2a2b66b11cc59f4fa0a301315"},
+    {file = "Pillow-9.0.0-pp37-pypy37_pp73-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:6c5439bfb35a89cac50e81c751317faea647b9a3ec11c039900cd6915831064d"},
+    {file = "Pillow-9.0.0-pp38-pypy38_pp73-win_amd64.whl", hash = "sha256:95545137fc56ce8c10de646074d242001a112a92de169986abd8c88c27566a05"},
+    {file = "Pillow-9.0.0.tar.gz", hash = "sha256:ee6e2963e92762923956fe5d3479b1fdc3b76c83f290aad131a2f98c3df0593e"},
+]
+pyautogui = [
+    {file = "PyAutoGUI-0.9.53.tar.gz", hash = "sha256:d31de8f712218d90be7fc98091fce1a12a3e9196e0c814eb9afd73bb2ec97035"},
+]
+pygetwindow = [
+    {file = "PyGetWindow-0.0.9.tar.gz", hash = "sha256:17894355e7d2b305cd832d717708384017c1698a90ce24f6f7fbf0242dd0a688"},
+]
 pyjokes = [
     {file = "pyjokes-0.6.0-py2.py3-none-any.whl", hash = "sha256:70b6125186dee5845038505cd16b5e09250da46c730e36b44ffd870e3c81aaaa"},
     {file = "pyjokes-0.6.0.tar.gz", hash = "sha256:08860eedb78cbfa4618243c8db088f21c39823ece1fdaf0133e52d9c56e981a5"},
+]
+pymsgbox = [
+    {file = "PyMsgBox-1.0.9.tar.gz", hash = "sha256:2194227de8bff7a3d6da541848705a155dcbb2a06ee120d9f280a1d7f51263ff"},
 ]
 pyobjc = [
     {file = "pyobjc-8.1-py3-none-any.whl", hash = "sha256:7f8fe53c6a80aff1da3f2f211e7f253ec03d0ca5a7728d886cb1ec1547af5d64"},
@@ -2766,12 +2943,31 @@ pyobjc-framework-webkit = [
     {file = "pyobjc_framework_WebKit-8.1-cp36-abi3-macosx_10_9_x86_64.whl", hash = "sha256:c481ccebc338876cb64e1dd540ab9eb45141be6aeb2ceb24c2a540b178f27b4b"},
     {file = "pyobjc_framework_WebKit-8.1-cp36-abi3-macosx_11_0_universal2.whl", hash = "sha256:e09f93b985a2d3d52b744a9b55510e94cf10a4298edcb32cdeb6d834d86bc4bc"},
 ]
+pyperclip = [
+    {file = "pyperclip-1.8.2.tar.gz", hash = "sha256:105254a8b04934f0bc84e9c24eb360a591aaf6535c9def5f29d92af107a9bf57"},
+]
 pypiwin32 = [
     {file = "pypiwin32-223-py3-none-any.whl", hash = "sha256:67adf399debc1d5d14dffc1ab5acacb800da569754fafdc576b2a039485aa775"},
     {file = "pypiwin32-223.tar.gz", hash = "sha256:71be40c1fbd28594214ecaecb58e7aa8b708eabfa0125c8a109ebd51edbd776a"},
 ]
+pyrect = [
+    {file = "PyRect-0.1.4.tar.gz", hash = "sha256:3b2fa7353ce32a11aa6b0a15495968d2a763423c8947ae248b92c037def4e202"},
+]
+pyscreeze = [
+    {file = "PyScreeze-0.1.28.tar.gz", hash = "sha256:4428600ed19b30cd3f4b5d83767d198fc1dbae7439eecf9bd795445c009b67ae"},
+]
+python3-xlib = [
+    {file = "python3-xlib-0.15.tar.gz", hash = "sha256:dc4245f3ae4aa5949c1d112ee4723901ade37a96721ba9645f2bfa56e5b383f8"},
+]
 pyttsx3 = [
     {file = "pyttsx3-2.90-py3-none-any.whl", hash = "sha256:a585b6d8cffc19bd92db1e0ccbd8aa9c6528dd2baa5a47045d6fed542a44aa19"},
+]
+pytweening = [
+    {file = "pytweening-1.0.4.tar.gz", hash = "sha256:8533282cf70b31de8a0499e1cf420930b0013c787118872b2ec899382792e2e6"},
+]
+pywhatkit = [
+    {file = "pywhatkit-5.3-py3-none-any.whl", hash = "sha256:5fe628b796c96257fa0645ea1cd8d594210e2c88fecc2b4fa376c974d684f0fb"},
+    {file = "pywhatkit-5.3.tar.gz", hash = "sha256:420c18ae6481b157a5912c275fc5008883149299a10adb2135a78263e431bf27"},
 ]
 pywin32 = [
     {file = "pywin32-303-cp310-cp310-win32.whl", hash = "sha256:6fed4af057039f309263fd3285d7b8042d41507343cd5fa781d98fcc5b90e8bb"},
@@ -2791,9 +2987,16 @@ requests = [
     {file = "requests-2.27.1-py2.py3-none-any.whl", hash = "sha256:f22fa1e554c9ddfd16e6e41ac79759e17be9e492b3587efa038054674760e72d"},
     {file = "requests-2.27.1.tar.gz", hash = "sha256:68d7c56fd5a8999887728ef304a6d12edc7be74f1cfa47714fc8b414525c9a61"},
 ]
+rubicon-objc = [
+    {file = "rubicon-objc-0.4.2.tar.gz", hash = "sha256:6fbc8e12bd66c84427cfb95634c4bd10ade356ae2b2ae0d2b51dcbf5810d2602"},
+    {file = "rubicon_objc-0.4.2-py3-none-any.whl", hash = "sha256:c8780b9d6c3c906642080a9f8b710f5823a498c17e9bbea7f70781ea6ede7962"},
+]
 soupsieve = [
     {file = "soupsieve-2.3.1-py3-none-any.whl", hash = "sha256:1a3cca2617c6b38c0343ed661b1fa5de5637f257d4fe22bd9f1338010a1efefb"},
     {file = "soupsieve-2.3.1.tar.gz", hash = "sha256:b8d49b1cd4f037c7082a9683dfa1801aa2597fb11c3a1155b7a5b94829b4f1f9"},
+]
+speechrecognition = [
+    {file = "SpeechRecognition-3.8.1-py2.py3-none-any.whl", hash = "sha256:4d8f73a0c05ec70331c3bacaa89ecc06dfa8d9aba0899276664cda06ab597e8e"},
 ]
 urllib3 = [
     {file = "urllib3-1.26.8-py2.py3-none-any.whl", hash = "sha256:000ca7f471a233c2251c6c7023ee85305721bfdf18621ebff4fd17a8653427ed"},
